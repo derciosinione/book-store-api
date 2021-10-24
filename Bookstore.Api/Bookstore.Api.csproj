@@ -22,7 +22,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Api" />
+    <Compile Remove="Api\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Api\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Api\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Api\**" />
   </ItemGroup>
 
 </Project>
