@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Bookstore.UnitTests
 {
-    public class UnitTest1
+    public class AuthorsControllerTest
     {
         [Fact]
         public void Test1()
