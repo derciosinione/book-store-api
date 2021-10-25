@@ -44,9 +44,12 @@ namespace Bookstore.Api.Controllers
 
     //GET api/authors/{id}
     [HttpGet("{id:int}", Name = "GetAuthorById")]
-    public async Task<IActionResult> GetAuthorById(int id)
+    public async Task<ActionResult<AuthorReadDto>> GetAuthorById(int id)
     {
       var entity = await _unitOfWork.Authors.Get(x => x.Id == id);
+      
+      if (entity is null) return NotFound("Author not found");
+      
       var result = _mapper.Map<AuthorReadDto>(entity);
       return Ok(result);
     }
